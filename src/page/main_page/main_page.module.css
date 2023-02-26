@@ -1,0 +1,20 @@
+.mainPage {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.title {
+    /* color: #FFCA00; */
+    color: #97A9CB;
+}
+
+.cards {
+    color: #bbbfc5;
+    display: flex;
+    justify-content: space-evenly;
+}
