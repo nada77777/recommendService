@@ -1,11 +1,11 @@
 
-import { Configuration, OpenAIApi, os } from "openai";
+import { Configuration, OpenAIApi } from "openai";
 
 
 
 const configuration = new Configuration({
     organization: "org-fwc2O0nbSNQqlrJCsjkxkzlN",
-    apiKey: "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",
+    apiKey: "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",
 });
 
 
@@ -21,7 +21,8 @@ export const test = (item) => {
     // }).then(result => console.log(result));
     const result = openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `Please recommend five ${item.country} ${item.genre} movies.`,
+        // prompt: `Please recommend five ${item.country} ${item.genre} movies.`,
+        prompt: `Please recommend five ${item.country} ${item.genre} ${item.type}.`,
         temperature: 0,
         max_tokens: 150,
         top_p: 1,
@@ -32,6 +33,24 @@ export const test = (item) => {
     return result;
 };
 
+export const aa = () => {
+    // openai.createCompletion({
+    //     model: 'text-davinci-003',
+    //     prompt: `recommend me drake's song`,
+    //     max_tokens: 150,
+    //     temperature: 0,
+    // }).then(result => console.log(result));
+    openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: `Please recommend five movies.`,
+        temperature: 0,
+        max_tokens: 150,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+    }).then(result => console.log(result.data.choices[0].text));
+
+};
 
 export function getItem(item) {
     const { genre, country } = item;

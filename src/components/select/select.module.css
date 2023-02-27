@@ -1,6 +1,5 @@
 .form {
     display: flex;
-    background-color: aquamarine;
     margin: 5px 0;
 }
 
@@ -16,8 +15,9 @@
     flex-basis: 70%;
     width: 50%;
     font-weight: 600;
-    background-color: bisque;
     color: var(--color-text);
+    outline: none;
+    padding: 3px;
 }
 
 .form .label option {}
