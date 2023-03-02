@@ -26,7 +26,6 @@ const MainPage = (props) => {
         ],
     };
 
-
     const music = {
         genre: [
             'pop',

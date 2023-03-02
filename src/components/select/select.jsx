@@ -5,7 +5,6 @@ const Select = ({ name, getItem, itemInfo }) => {
     const onClick = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        // const item = name === 'genre' ? { genre: value } : { country: value };
         getItem(name, value);
     };
 

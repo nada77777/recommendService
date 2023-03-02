@@ -22,8 +22,6 @@
 
 .mainCard:hover {
     color: var(--color-text);
-    /* background-color: #2C4F92; */
-    /* background-color: #97A9CB; */
     background-color: var(--color-button);
     color: white;
 }
