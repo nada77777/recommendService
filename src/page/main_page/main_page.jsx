@@ -6,6 +6,7 @@ import MainCard from '../../components/main_card/main_card';
 import styles from './main_page.module.css';
 
 const MainPage = (props) => {
+
     const movie = {
         genre: [
             'Action',
@@ -59,7 +60,6 @@ const MainPage = (props) => {
             'France',
         ],
     };
-
 
     return (
         <section className={styles.mainPage}>

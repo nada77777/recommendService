@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './select_page.module.css';
 import Button from '../../components/button/button';
 import Select from '../../components/select/select';
-import { test } from '../../api/api';
+import { searchObject } from '../../api/api';
 import { useLocation } from 'react-router-dom';
 
 const SelectPage = (props) => {
@@ -10,10 +10,9 @@ const SelectPage = (props) => {
     const pageName = location.state.name;
     const items = location.state.type;
 
-    const [searchKeyword, setSearchKeyword] = useState({ genre: items.genre[0], country: items.country[0] });
+    const [searchKeyword, setSearchKeyword] = useState({ genre: items.genre[0], country: items.country[0] }); // 받아온 items의 각각 첫 번째 값을 초깃값으로 설정
     const [searchResult, setSearchResult] = useState('');
     const [loading, setLoading] = useState(false);
-
 
     const getItem = (name, value) => {
         const newItem = name === 'genre' ? { genre: value, country: searchKeyword.country, type: pageName } : { genre: searchKeyword.genre, country: value, type: pageName };
@@ -22,13 +21,12 @@ const SelectPage = (props) => {
 
     const search = () => {
         setSearchResult('');
-        setLoading(true);
-        test(searchKeyword)//
+        setLoading(true); //검색시 loading 상태 true로 변환
+        searchObject(searchKeyword)//
             .then(result => {
-                setSearchResult(result);
-                setLoading(false);
+                setSearchResult(result);// searchObject에서 받아온 data searchResult에 전달
+                setLoading(false);//searchResult받아온 후 loading 상태 false로 변환
             });
-
     };
 
     return (

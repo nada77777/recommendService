@@ -8,7 +8,8 @@ const Select = ({ name, getItem, itemInfo }) => {
         getItem(name, value);
     };
 
-    const option = itemInfo.map((item, index) => <option key={index} value={item}>{item}</option>)
+    const option = itemInfo.map((item, index) => <option key={index} value={item}>{item}</option>);
+
     return (
         <form className={styles.form}>
             <label className={styles.name}>{name.toUpperCase()}</label>
